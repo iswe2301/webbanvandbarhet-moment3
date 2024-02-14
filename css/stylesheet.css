@@ -1,0 +1,1875 @@
+/* Importerar externt google font typsnitt, Montserrat och Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;700&display=swap');
+
+/* Tar bort all margin och padding samt sätter box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling för fokusmarkering för alla element (tabbning) */
+*:focus {
+    outline: 4px solid #0060a9;
+    outline-offset: 2px;
+}
+
+/* Döljer fokusmarkering när datormusen används (ej tabb) */
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Sätter storlek på typsnitt i roten */
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+/* Typsnitt, storlek och bakgrundfärg för allt inom bodyn */
+body {
+    font-size: 1.8rem;
+    line-height: 3rem;
+    letter-spacing: 0.2px;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: black;
+    height: 100%;
+}
+
+/* Visas i flex, flexibel bredd och maxbredd */
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 172px auto 0;
+    width: 80%;
+    max-width: 1200px;
+}
+
+/* Klass för opacitet när mobilmeny öppnas (JS) */
+.opacity {
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* -------------------------------- RUBRIKER & TEXT -------------------------------- */
+
+/* Styling för h1 */
+h1 {
+    font-size: 3rem;
+    font-family: "Montserrat", 'Roboto', Helvetica, sans-serif;
+    color: black;
+    font-weight: bold;
+    margin: 12rem 5rem 0 5rem;
+    letter-spacing: 0.1rem;
+    line-height: 4.2rem;
+}
+
+/* Styling för h2 */
+h2 {
+    font-size: 2.4rem;
+    font-family: "Montserrat", 'Roboto', Helvetica, sans-serif;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    margin: 4rem 0 2rem 0;
+    line-height: 3.6rem;
+}
+
+/* Styling för h3 */
+h3 {
+    font-size: 2.2rem;
+    font-family: "Montserrat", 'Roboto', Helvetica, sans-serif;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    margin: 4rem 0 2rem 0;
+    line-height: 3.4rem;
+}
+
+/* Styling för h4 */
+h4 {
+    font-size: 2rem;
+    font-family: "Montserrat", 'Roboto', Helvetica, sans-serif;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 0;
+    margin: 4rem 0 2rem 0;
+    line-height: 3.2rem;
+}
+
+/* Padding för paragrafer */
+p {
+    padding: 1rem 0;
+}
+
+/* Margin, bredd och max-bredd för sektioner */
+section {
+    margin: 2.2rem auto;
+    max-width: 75ch;
+    width: 100%;
+}
+
+/* -------------------------------- HEADER & NAV -------------------------------- */
+
+/* Styling och position för header */
+#computerhead {
+    background-color: #001F3F;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8rem;
+    padding: 0 3rem 0 3rem;
+    z-index: 3;
+}
+
+/* Styling för navlänkar i header */
+#headnav a {
+    color: white;
+    margin-left: 6rem;
+    margin-right: 1rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: "Montserrat", 'Roboto', Helvetica, sans-serif;
+}
+
+/* Hover för navlänkar i header */
+#headnav a:hover {
+    text-decoration-color: white;
+    text-underline-offset: 0.3rem;
+    text-decoration: underline;
+
+}
+
+/* Tar bort marginaler, padding och listprickar för listor i nav, visar i flex row */
+nav ul {
+    margin: 0 0 0 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+}
+
+/* Meny/navigering för datorvy, fixerad position */
+#computernav {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: right;
+    position: fixed;
+    top: 8rem;
+    left: 0;
+    padding: 0.8rem 4rem 0.8rem 1rem;
+    width: 100%;
+    height: auto;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.70);
+    font-family: "Montserrat", "Roboto", Arial, sans-serif;
+    letter-spacing: 0.1rem;
+    z-index: 1;
+}
+
+/* Marignal för navigeringslänkar i undermeny */
+#navlinks2 {
+    margin: 1rem 1.2rem 0.5rem 0;
+}
+
+/* Styling för navigeringslänkar i undermeny */
+#navlinks2 a {
+    color: #0060a9;
+    font-size: 1.6rem;
+    text-decoration: underline;
+    text-decoration-color: #0060a9;
+    text-underline-offset: 0.2rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    padding-left: 0;
+    margin-left: 4rem;
+    padding: 0.8rem 1.5rem;
+}
+
+/* Bakgrundfärg för aktiv sida samt vid hover */
+#navlinks2 #active2,
+#navlinks2 a:hover {
+    background-color: #d9d9d9;
+    border-radius: 2px;
+}
+
+/* Styling för länkar i meny/nav */
+nav a {
+    text-decoration: none;
+    color: #001F3F;
+    font-size: 1.9rem;
+    font-weight: bold;
+    margin-left: 5rem;
+}
+
+/* Hover-färg på nav-länkar samt aktiv sida */
+nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+    text-decoration-color: #001F3F;
+}
+
+/* Styling för länkar vid klick i nav */
+nav a:active {
+    color: #0074cc;
+    text-decoration-color: #0074cc;
+}
+
+/* Styling för aktiv sida i nav */
+#active,
+#active4 {
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+    text-decoration-color: #001F3F;
+}
+
+/* Styling för aktiv underlänk i mobilmeny */
+#active3 {
+    background-color: #00162C;
+    border-radius: 2px;
+}
+
+/* Styling för aktiv navlänk i header */
+#headnav #active {
+    text-decoration-color: white;
+}
+
+/* Döljer mobil-meny, mobil-header samt bokningsinfo för mobilen */
+.menubtn,
+#mobilenav,
+#mobileheadnav,
+#mobilebooking {
+    display: none;
+}
+
+/* Styling för uppläsning och byt språk */
+.hear-lang button,
+.hear-lang {
+    width: 100%;
+    height: auto;
+    min-height: 34px;
+    padding: 0;
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+    font-family: "Montserrat", 'Roboto', Helvetica, sans-serif;
+    font-weight: 400;
+    color: white;
+    background-color: #001F3F;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    justify-content: flex-end;
+}
+
+.hear-lang li {
+    margin: 0 0 1rem 2rem;
+    padding: 0 0 0 2rem;
+    width: auto !important;
+}
+
+.hear-lang button:hover,
+.hear-lang button:active {
+    background-color: #001F3F;
+}
+
+/* -------------------------------- BILDER -------------------------------- */
+
+/* Sätter bilder till 100 % storlek */
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Styling för bakgrundsbild */
+#background img {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+/* Styling för bankid-logo*/
+#BankID img {
+    height: 5rem;
+    width: 5rem;
+    margin-left: 2rem;
+}
+
+#logo {
+    margin-top: 0.8rem;
+}
+
+/* -------------------------------- IKONER -------------------------------- */
+
+/* Margin till vänster för ikoner */
+.fa-circle-info,
+.fa-house {
+    margin-left: 1rem;
+}
+
+/* Margin till vänster + höger för ikoner */
+.fa-angle-down,
+.fa-angle-up {
+    margin: 1rem;
+}
+
+/* Margin till höger för ikoner */
+.fa-location-dot,
+.fa-calendar-days,
+.fa-clock,
+.fa-user-group,
+.fa-phone,
+.fa-envelope,
+.fa-ear-listen,
+.fa-globe {
+    margin-right: 0.5rem;
+}
+
+/* Margin till vänster för ikoner */
+.fa-rotate-left,
+.fa-rotate,
+.fa-wheelchair,
+.fa-dog,
+.fa-arrow-right-from-bracket,
+nav .fa-angle-down {
+    margin-left: 0.5rem;
+}
+
+/* Margin för pilikoner i formulär */
+form .fa-angle-down,
+form .fa-angle-up {
+    margin-left: 2rem;
+}
+
+/* Margin för ikoner innan resedetaljer */
+.travelinfo .fa-rotate-left,
+.travelinfo .fa-location-dot,
+.travelinfo .fa-rotate,
+.travelinfo .fa-wheelchair,
+.travelinfo .fa-dog {
+    margin-right: 2rem;
+}
+
+/* Styling och position för ikoner i header */
+header .fa-question,
+header .fa-message,
+.fa-magnifying-glass,
+.fa-user {
+    margin-left: 0.2rem;
+}
+
+/* Vänstermarginal */
+#edit-personal .fa-pen-to-square {
+    margin-left: 0.5rem;
+}
+
+/* Styling för högerpilsikon */
+.fa-long-arrow-alt-right {
+    margin-left: 2rem;
+    color: white;
+}
+
+/* Margin efter ikoner innan text i footer */
+footer .fa-phone,
+footer .fa-envelope,
+.fa-message {
+    margin-right: 1rem;
+}
+
+/* -------------------------------- FORMULÄR -------------------------------- */
+
+/* Max-bredd för formulär */
+form {
+    max-width: 75ch;
+    margin: 0 auto;
+}
+
+/* Tar bort border för fieldset */
+fieldset {
+    border: none;
+}
+
+/* Styling för paragrafer i formulär */
+form p {
+    margin: 0 0 0 4rem;
+    padding: 0 0 2rem 0;
+}
+
+/* Styling för div inom formulär */
+form div {
+    width: 100%;
+    margin: 0.5rem 2rem;
+}
+
+/* Styling för h2 rubrik inom formulär */
+form h2 {
+    margin: 6rem 0 2rem 0;
+}
+
+/* Styling för h3 rubrik inom formulär */
+form h3 {
+    margin: 4rem 2rem 2rem 2rem;
+}
+
+/* Styling för box för returresa + återkommande resa, döljs initialt */
+#return-box,
+#freq-box {
+    display: none;
+    margin: 2rem 4rem;
+    background-color: white;
+    padding: 1rem 4rem 1rem 1rem;
+    max-width: 718px;
+}
+
+/* Styling för rubrik för returresa + återkommande resa */
+#return-box h3,
+#freq-box h3 {
+    margin: 2rem 2rem 0 2rem;
+}
+
+/* Styling för rubrik för returresa + återkommande resa */
+#return-box h4,
+#freq-box h4 {
+    margin: 3rem 2rem 2rem 2rem;
+}
+
+/* Styling för val av frekvens, döljs initialt */
+#weekly-freq,
+#monthly-freq {
+    display: none;
+    margin: 2rem;
+}
+
+/* Styling för pris i bokningsformuläret */
+#price {
+    display: none;
+    background-color: #e0e0e0;
+    padding: 0.5rem 2rem 2rem 2rem;
+    margin: 4rem 0 2rem 4rem;
+    max-width: 718px;
+    border-radius: 2px;
+    font-size: 1.6rem;
+}
+
+/* Styling för enspalts-input i form */
+.one-spalt {
+    margin: 0 0 0 4rem;
+    max-width: 718px;
+}
+
+/* Styling för checkboxes */
+.checkbox-alignment {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tar bort margin för divs */
+.checkbox-margin {
+    margin: 0;
+}
+
+/* Noll marginal för checkbox inom enspalt */
+.one-spalt .checkbox-alignment {
+    margin: 0;
+}
+
+/* Styling för tvåspalts-input i form */
+.two-spalt {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Styling för input och select */
+input,
+select {
+    height: 4rem;
+    width: 100%;
+    font-size: 1.6rem;
+    padding-left: 2rem;
+    margin: 1rem 0 2rem 0;
+}
+
+/* Speciell styling för input checkbox och radio */
+input[type="checkbox"],
+input[type="radio"] {
+    vertical-align: middle;
+    width: 2rem !important;
+    height: 2rem;
+    margin: 1rem 1rem 1rem 0;
+    cursor: pointer;
+}
+
+/* Styling för textarea */
+textarea {
+    width: 100%;
+    height: 15rem;
+    font-size: 1.6rem;
+    padding: 2rem;
+    margin: 1rem 0 2rem 0;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+/* Linjering för labels */
+label {
+    vertical-align: middle;
+}
+
+/* Extra marginaler för övriga önskemål efter dolda underobjekt */
+#extra-margin {
+    margin: 6rem 2rem 2rem 2rem;
+}
+
+/* -------------------------------- MINA RESOR -------------------------------- */
+
+/* Visar adress till och från som flex på samma rad (mina bokade resor) */
+.addressinfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 20rem;
+    padding-left: 0.8rem;
+    margin-left: 5rem;
+}
+
+/* Visar personlig info som flex, centrerar innehåll, minskar text */
+#personal-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    margin: 2rem 0;
+    font-size: 1.6rem;
+    background-color: white;
+    padding: 2rem;
+    width: 100%;
+}
+
+/* Marginal till topp */
+#edit-personal {
+    margin-top: 2rem;
+}
+
+/* Minskar padding */
+#personal-info p {
+    padding: 0.5rem 0;
+}
+
+/* Vänstermarginal för resedetaljer */
+.traveldetails {
+    margin-left: 5rem;
+}
+
+/* Bakgrundfärg och padding för reseinfos box */
+.travelinfo {
+    background-color: white;
+    padding: 0 4rem 3rem 4rem;
+}
+
+/* Marginaler för knappar i reseinfo */
+.travelinfo button {
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+}
+
+/* Marginal för rubriker i reseinfo */
+.travelinfo h3,
+.travelinfo h4 {
+    margin-left: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Extra topp-marginal för den översta resan som visas */
+.travel1 {
+    margin-top: 10rem;
+}
+
+/* Döljer mobil-reseinfo initalt */
+.mobiletravel {
+    display: none;
+}
+
+/* Styling för ändra resa-sektion */
+.changetravel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 60ch;
+}
+
+/* Ändrar storlek, tar bort padding och margin för adress i ändra resa */
+.changetravel .addressinfo {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+/* Marginal för rubrik i ändra resa */
+.changetravel h4 {
+    margin-top: 1rem;
+}
+
+/* Marginal för rubrik inann ändra resa (h2) */
+#changeheading {
+    margin: 6rem auto 2rem auto;
+}
+
+/* Ändrar färg och storlek för infotext under bokningsnummer (ändra resa) */
+#bookingnmbr {
+    margin: 2rem 0 2rem 5rem;
+    font-size: 2.4rem;
+    color: #001F3F;
+}
+
+/* Mindre text för länk till ändra/avboka resa, svart textfärg */
+#small-text {
+    font-size: 1.6rem;
+    color: black;
+}
+
+
+/* Styling för avboka resa-sektion, visar som flex och maxbredd */
+#unbook-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8rem auto;
+    max-width: 60rem;
+    text-align: center;
+}
+
+/* Toppmarginal för knappar i avboka resa */
+#unbook-section button {
+    margin-top: 3rem;
+}
+
+/* Större text för viktig text innan avboka-knapp */
+#confirm-delete {
+    font-size: 2.2rem;
+    margin-top: 5rem;
+}
+
+/* -------------------------------- LÄNKAR OCH LISTOR -------------------------------- */
+
+/* Tar bort underline för alla länkar, sätter färg */
+a {
+    text-decoration: none;
+    color: #0060a9;
+}
+
+/* Styling och position för brödsmulor */
+#breadcrumbs {
+    position: absolute;
+    top: 220px;
+    font-size: 1.4rem;
+    color: black;
+    margin-right: 10%;
+}
+
+/* Styling för länkar i sektioner och brödsmulor + personlig info på mina sidor */
+section a,
+#breadcrumbs a,
+#edit-personal {
+    color: #0060a9;
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+}
+
+/* Styling för länkhover i sektioner och brödsmulor + personlig info på mina sidor */
+section a:hover,
+#breadcrumbs a:hover,
+#edit-personal a:hover {
+    color: #001F3F;
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+}
+
+/* Styling för länkar vid hover */
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: #001F3F;
+    text-underline-offset: 1rem;
+}
+
+/* Styling för o-ordnad lista */
+ul {
+    padding: 0 4rem;
+    margin: 1rem 0;
+}
+
+/* Tar bort padding, marginal och listprickar för knappar i lista */
+#questions {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+/* -------------------------------- KNAPPAR -------------------------------- */
+
+/* Styling för knappar */
+button {
+    width: 100%;
+    padding: 1.2rem 3rem;
+    font-size: 2.2rem;
+    letter-spacing: 0.1rem;
+    font-family: "Montserrat", 'Roboto', Helvetica, sans-serif;
+    font-weight: 600;
+    color: white;
+    background-color: #0074cc;
+    border: none;
+    border-radius: 5px;
+    margin: 4rem auto 0 auto;
+    cursor: pointer;
+}
+
+/* Skugga för boka-knapp samt textstorlek */
+#book-btn {
+    font-size: 2rem;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.70);
+}
+
+/* Hoverfärg för knapp */
+button:hover {
+    background-color: #005BAF;
+}
+
+/* Styling för knappar med klassen accordion */
+.accordion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.6rem;
+    height: auto;
+    font-size: 2rem;
+    padding: 0.5rem 3rem;
+}
+
+/* Styling för submitknapp */
+#submit {
+    width: 35%;
+    height: 4rem;
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    padding: 0;
+    margin-left: 65%;
+}
+
+/* Styling för genomför ändring-knapp i ändra resa */
+#submit2 {
+    width: 50%;
+    height: 5rem;
+    margin: 8rem auto 0 auto;
+    padding: 0;
+}
+
+/* Styling för boka resa-knapp i bokningsformulär samt ändra resa-knapp på mina resor */
+#booking #submit,
+.change {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    width: 100%;
+    margin-left: 1rem;
+    height: 5rem;
+    font-size: 2rem;
+    padding: 0;
+}
+
+/* Styling för rensa och avboka-knappar */
+#reset,
+.delete {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    width: 100%;
+    margin-right: 1rem;
+    height: 5rem;
+    font-size: 2rem;
+    padding: 0;
+    background-color: #e30000;
+}
+
+/* Hover för rensa, avboka och logga ut-knappar */
+#reset:hover,
+.delete:hover {
+    background-color: #d30000;
+}
+
+/* Styling för BankID-knapp */
+#BankID {
+    background-color: #183E4F;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
+    max-width: 544.66px;
+}
+
+/* Hover för BankID-knapp */
+#BankID:hover {
+    background-color: #153646;
+}
+
+/* Styling för knappar på mina resor */
+.my-site-btn {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    margin: 2rem 0 0 0;
+}
+
+/* Styling för logga ut knapp */
+#logout-btn {
+    margin: 2rem 0 0 5rem;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    height: auto;
+    max-width: 15rem;
+    background-color: #e30000;
+}
+
+/* -------------------------------- OM FÄRDTJÄNST / Q&A -------------------------------- */
+
+/* Döljer svar initialt, stylar backgrund */
+.answer {
+    display: none;
+    padding: 2rem 4rem;
+    background-color: white;
+}
+
+/* Styling för rubriker i svar */
+.answer h4 {
+    font-size: 2.2rem;
+    margin: 2.2rem 0 0 0;
+    line-height: 3.4rem;
+}
+
+/* Styling för paragrafen med länk till sök-sidan */
+#search-paragraph {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+/* Margin för rubrik till frågor och svar */
+#QnA {
+    margin: 4rem 0 3rem 0;
+}
+
+/* --------------------------------- GRID -------------------------------- */
+
+/* Allt inom main visas istället i grid */
+#grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 126px auto 0;
+    width: 80%;
+    max-width: 1200px;
+}
+
+/* Postion och styling för grid-item */
+#item1 {
+    grid-row: 1;
+    grid-column: 1;
+    margin: 10rem 0 0 0;
+    padding: 2rem 4rem 6rem 4rem;
+    line-height: 3rem;
+    max-width: 55ch;
+    background-color: rgba(255, 255, 255, 0.9)
+}
+
+/* Styling för grid-item rubrik */
+#item1 h1 {
+    margin: 4rem 0 2rem 0;
+    text-align: center;
+}
+
+/* --------------------------------- SÖKFUNKTION -------------------------------- */
+
+/* Styling och position för sökfunktionen (inputfältet) */
+#search,
+#search2 {
+    width: 100%;
+    height: 5rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1.8rem;
+    font-family: 'Roboto', Helvetica, sans-serif;
+    text-align: left;
+    color: grey;
+    box-shadow: none;
+    border: 1px solid grey;
+    background-color: white;
+    padding: 0 2.5rem;
+    margin: 1rem auto 0 auto;
+}
+
+/* Styling och absolut position för sökknappen (ikon) */
+#searchbtn,
+#searchbtn2 {
+    position: absolute;
+    width: 4rem;
+    height: 100%;
+    top: 1.7rem;
+    right: 3.5%;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    background: none;
+    color: #001F3F;
+
+}
+
+/* Ändrar position för sökknappen på söksidan (ej i mobilmeny) */
+#searchbtn2 {
+    top: 2.2rem !important;
+}
+
+/* Styling och position för sök-formuläret */
+#search-box,
+#search-box2 {
+    position: relative;
+    margin-bottom: 30rem;
+    width: 100%;
+    max-width: 55ch;
+}
+
+/* Styling för label i formulär på söksidan */
+#search-box2 label {
+    font-size: 2rem;
+}
+
+/* Styling för sektion innan sökfunktionen */
+#searchinfo {
+    margin: 0 auto 4rem auto;
+    max-width: 55ch;
+}
+
+/* Styling för rubrik till sök */
+#searchinfo h1 {
+    margin: 12rem 0 0 0;
+}
+
+/* --------------------------------- TOOLTIPS -------------------------------- */
+
+/* Stling för tooltip med hjälp-cursor */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+}
+
+/* Döljer tooltip initialt, stylar boxen och text, transition 0.5 sekunders opacity, absolut positionering */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 100%;
+    background-color: #555555;
+    color: white;
+    font-size: 1.6rem;
+    text-align: center;
+    border-radius: 5px;
+    padding: 1rem;
+    position: absolute;
+    z-index: 1;
+    top: 4rem;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+/* 100% opacity när tooltip visas vid hover */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* --------------------------------- BEKRÄFTELSESIDORNA -------------------------------- */
+
+/* Sektion för bekräftelse m. maxbredd och centrerad text */
+#confirm-section {
+    max-width: 55ch;
+    margin: 10rem auto;
+    text-align: center;
+}
+
+/* Styling för rubrik till bekräftelse */
+#confirm-section h3 {
+    margin: 2rem;
+}
+
+/* Bakgrund för bekräftelsebox */
+#confirmation-text {
+    background-color: #2ECC40;
+    border-radius: 2px;
+    padding: 1rem 2rem 2rem 2rem;
+    margin-bottom: 2rem;
+}
+
+/* --------------------------------- LOGGA IN SIDAN -------------------------------- */
+
+/* Visar login som flex och centrerar */
+#login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10rem;
+    max-width: 55ch;
+}
+
+/* Styling för rubrik till logga in */
+#login h1 {
+    margin-bottom: 6rem;
+}
+
+/* -------------------------------- TILLGÄNGLIHET -------------------------------- */
+
+/* Styling för rubriker till tillgänglighetssidan */
+#accessibility h1 {
+    margin: 12rem 0 1.5rem 0;
+}
+
+#accessibility h2 {
+    margin: 4rem 0 1rem 0;
+}
+
+/* -------------------------------- KONTAKT -------------------------------- */
+
+/* Max-bredd för kontaktsektion och formulär */
+.contact {
+    max-width: 55ch;
+}
+
+/* Styling för rubrik till kontaktfomrulär */
+.contact h1 {
+    margin: 12rem 0 1.5rem 0;
+}
+
+/* Styling för skicka-knapp */
+.contact #submit {
+    width: 100%;
+    margin: 1rem 0 0 1rem;
+    height: 5rem;
+}
+
+/* Styling för reset-knapp */
+.contact #reset {
+    width: 100%;
+    margin: 1rem 1rem 0 0;
+}
+
+/* Botten marginal för div */
+.contact div {
+    margin: 0 0 10rem 0;
+}
+
+/* -------------------------------- DATE & TIMEPICKER (JQUERY) -------------------------------- */
+
+/* Visar som flex, centrerar */
+.ui-timepicker-div.ui-timepicker-oneLine dl {
+    display: flex;
+    justify-content: center;
+}
+
+/* Justerar marginaler för label till tid */
+.ui-timepicker-div.ui-timepicker-oneLine .ui_tpicker_time_label {
+    margin: 0.7rem 1rem 0 0;
+}
+
+/* Döljer "nu" knapp */
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+    display: none;
+}
+
+/* Justerar maginal för ":" mellan timme och minut */
+.ui-timepicker-div.ui-timepicker-oneLine dl dd.ui_tpicker_minute:before {
+    margin: 0 0.2rem;
+}
+
+/* Justerar marginaler */
+.ui-state-default,
+.ui-widget-content .ui-state-default {
+    margin: 0.5rem 0 0 0;
+}
+
+/* -------------------------------- FOOTER -------------------------------- */
+
+/* Styling för footer och dess innehåll */
+footer {
+    background-color: #333333;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.70);
+    color: white;
+    padding: 2rem 2rem 0 2rem;
+    line-height: 2.4rem;
+    font-size: 1.4rem;
+    margin-top: 10rem;
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+
+/* Styling för rubrik i footer */
+footer h2 {
+    font-size: 1.8rem;
+    font-family: "Montserrat", 'Roboto', Helvetica, sans-serif;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    margin: 2rem auto 1.5rem;
+    text-align: center;
+    line-height: 2rem;
+}
+
+/* Divs visas som flex */
+footer div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Marginal och padding för paragrafer inom contact-info ID */
+#contact-info p {
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+}
+
+/* Tar bort padding för paragraf */
+footer p {
+    padding: 0;
+}
+
+/* Visar länk till formulär som flex (m. ikon) */
+#contactform-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+/* Stylar länkar i footer */
+footer a {
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+}
+
+/* Stylar hover av länkar i footer */
+footer a:hover {
+    color: #aadaff;
+    text-underline-offset: 0.2rem;
+    text-decoration-color: #aadaff;
+}
+
+/* Styling för huvudinnehåll i footer */
+#footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin-right: 5rem;
+}
+
+/* Speciell styling copyright i footern */
+#bottom-foot {
+    margin: 4rem auto 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* Special padding för paragrafer inom ID bottom-foot */
+#bottom-foot p {
+    padding: 0 0 1rem 10rem;
+}
+
+/* -------------------------------- MINDRE SKÄRMAR 1024PX -------------------------------- */
+
+/* Styling för skärmar mindre än 1024px */
+@media screen and (max-width: 1024px) {
+
+    /* Minskar margin, centerar innehåll och wrappar */
+    main {
+        flex-wrap: wrap;
+        align-content: center;
+        margin: 91px auto 0;
+    }
+
+    /* Visar grid som flex istället */
+    #grid {
+        display: flex;
+        margin-top: 91px;
+    }
+
+    /* Ändrar position för breadcrumbs */
+    #breadcrumbs {
+        top: 130px;
+    }
+
+    /* Flyttar upp */
+    #computernav {
+        top: 5rem;
+    }
+
+    /* Minskar headerhöjd */
+    #computerhead {
+        align-items: center;
+        height: 5rem;
+    }
+
+    /* Minskar logo */
+    #logo {
+        max-height: 4rem;
+    }
+
+    /* Minskar storlek */
+    h1 {
+        font-size: 2.8rem;
+        line-height: 3.8rem;
+        margin: 12rem 0 0 0;
+    }
+
+    /* Minskar storlek */
+    h2 {
+        font-size: 2.3rem;
+        line-height: 3.3rem;
+        margin: 4rem 0 1rem 0;
+    }
+
+    /* Minskar storlek */
+    h3 {
+        font-size: 2.1rem;
+        line-height: 3.1rem;
+    }
+
+    /* Minskar storlek */
+    h4 {
+        font-size: 1.9rem;
+        line-height: 2.9rem;
+    }
+
+    /* Minskar storlek */
+    footer h2 {
+        font-size: 1.7rem;
+    }
+
+    .hear-lang {
+        display: flex;
+        margin: 1rem auto;
+    }
+
+    .hear-lang button {
+        font-size: 1.6rem;
+    }
+
+    /* Minskar textstorlek i knappar */
+    button {
+        font-size: 1.8rem;
+        padding: 1rem;
+    }
+
+    /* Minskar max-bredd */
+    section {
+        max-width: 55ch;
+    }
+
+    /* Ändrar marginaler */
+    #bookingnmbr {
+        margin: 2rem 0 0 0;
+    }
+
+    /* Ändrar marginaler i formulär */
+    form div,
+    .one-spalt,
+    .two-spalt,
+    form h3,
+    #freq-box h4,
+    #return-box h4,
+    #freq-box h3,
+    #return-box h3,
+    form p,
+    #extra-margin,
+    #freq-box,
+    #return-box,
+    #monthly-freq,
+    #price {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Speciell styling för input checkbox och radio */
+    input[type="checkbox"],
+    input[type="radio"] {
+        width: 2rem !important;
+        height: 2rem;
+    }
+
+    /* Ändrar storlek för input i boka resa formulär */
+    #booking input,
+    #booking select {
+        width: 90%;
+    }
+
+    /* Ändrar padding för boka återkommande resa och returresa */
+    #freq-box,
+    #return-box {
+        padding: 1rem 2rem;
+    }
+
+    /* Ändrar flex-direction till kolumn */
+    #small-screen {
+        flex-direction: column;
+    }
+
+    /* Ändrar storlek på select */
+    #small-screen select {
+        width: 95%;
+    }
+
+    /* Ändrar marinal för checkboxar */
+    .checkbox-alignment {
+        margin-top: 2rem;
+    }
+
+    /* Ändrar marginal för fieldset i boka resa formulär */
+    #booking fieldset {
+        margin-left: 2.5rem;
+    }
+
+    /* Ändrar storlek för input-fält som är enspalt */
+    #booking .one-spalt input {
+        width: 97%;
+    }
+
+    /* Mindre textstorlek och mer padding för QnA knappar */
+    .accordion {
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+        margin-top: 2rem;
+    }
+
+    /* Vänsterställer innehållet */
+    .mysite-start {
+        align-items: start !important;
+    }
+
+    /* Minskar textstorlek på knapp*/
+    .travelinfo button {
+        font-size: 1.8rem;
+    }
+
+    /* Tar bort marginaler vä+hö och padding till höger */
+    .addressinfo,
+    .traveldetails,
+    .travelinfo h3 {
+        margin-left: 0;
+        margin-right: 0;
+        padding-right: 0;
+    }
+
+    /* Döljer menylänkar i nav för datorläge */
+    #navlinks,
+    #navlinks2 {
+        display: none;
+    }
+
+    /* Styling av mobilmeny */
+    #mobilenav {
+        background-color: #001F3F;
+        box-shadow: -2px 8px 10px rgba(0, 0, 0, 0.70);
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 60%;
+        font-family: 'Montserrat', 'Roboto', 'Arial', 'Helvetica', sans-serif;
+        padding: 8rem 2rem;
+        max-width: 400px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        z-index: 2;
+        overflow-y: auto;
+    }
+
+    /* Marginaler för formulär i mobilmeny */
+    #mobilenav form {
+        margin: 5rem auto 0 auto;
+        text-align: center;
+    }
+
+    /* Marginal och textstorlek för formulär-input i mobilmeny */
+    #mobilenav form #search {
+        margin: 1rem 0;
+        font-size: 1.6rem;
+    }
+
+    /* Styling för label till formulär i mobilmeny */
+    #mobilenav form label {
+        font-size: 2rem;
+        color: white;
+        margin: 0 1rem;
+        font-weight: 600;
+    }
+
+    /* Styling för o-ordnad lista i mobilmeny */
+    #mobilenav ul {
+        flex-direction: column;
+        width: 100%;
+        list-style-type: none;
+        text-align: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    /* Styling för listobjekt i mobilmeny */
+    #mobilenav li {
+        padding: 0.8rem 0;
+        margin-top: 3rem;
+        width: 100%;
+    }
+
+    /* Styling för länkar i mobilmeny */
+    #mobilenav a {
+        color: white;
+        text-decoration: none;
+        padding: 1rem 20%;
+        margin: 1rem auto;
+        z-index: 3;
+        letter-spacing: 0.1rem;
+    }
+
+    /* Styling för länkar vid hover och aktiv */
+    #mobilenav a:hover,
+    #mobilenav a:active {
+        text-decoration: underline;
+        text-underline-offset: 0.5rem;
+        color: white;
+        text-decoration-color: white;
+    }
+
+    #underlinks {
+        margin-top: 1.5rem;
+    }
+
+    /* Styling för länkar i undermeny navigering */
+    #underlinks a {
+        font-size: 1.8rem;
+        padding: 1rem 5rem;
+        letter-spacing: 0.1rem;
+        font-weight: 600;
+    }
+
+    /* Marginal för listobjekt i underlänkar */
+    #underlinks li {
+        margin: 0.5rem;
+    }
+
+    /* Styling för huvudlänkar i mobilmeny */
+    .mobileactive {
+        text-decoration: underline !important;
+        text-underline-offset: 0.8rem;
+        color: white;
+        text-decoration-color: white;
+    }
+
+    /* Döljer navigering i header */
+    #headnav {
+        display: none;
+    }
+
+    /* Länkar i header flyttas nedanför header, fixerad position och styling */
+    #mobileheadnav {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        background-color: white;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0.5rem 1rem;
+        display: flex;
+        justify-content: right;
+        z-index: -2;
+        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.70);
+        list-style-type: none;
+    }
+
+    /* Styling för länkar */
+    #mobileheadnav a {
+        color: #001F3F;
+        padding: 1rem 2.5rem 1rem 1rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin-left: 2.3rem;
+    }
+
+    /* Styling för mobil logga in-knapp i meny */
+    #mobilelogin {
+        font-size: 2rem;
+        box-shadow: none;
+        margin: 4rem auto;
+        width: 90%;
+    }
+
+    /* Styling för menyknapp */
+    .menubtn {
+        display: flex;
+        width: auto;
+        padding: 0;
+        margin: 0 0 0 2rem;
+        border: none;
+        border-radius: 0 0 0 5px;
+        background-color: #001F3F;
+        box-shadow: none;
+        align-items: center;
+        cursor: pointer;
+        z-index: 3;
+    }
+
+    /* Styling vid hover och aktiv */
+    .menubtn:hover,
+    .menubtn:active {
+        background-color: #001F3F;
+    }
+
+    /* Styling för menytext */
+    #menutext {
+        margin-right: 1.5rem;
+        line-height: 2.5rem;
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: white;
+    }
+
+    /* Hamburgermeny bestående av tre linjer, förändras under 0.4 sekunder */
+    #line1,
+    #line2,
+    #line3 {
+        width: 22px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: 0.4s;
+        display: block;
+    }
+
+    /* Ändrar position och rotrar första linjen -45 grader genom klassen cross (JS) */
+    .cross #line1 {
+        transform: translate(0, 8px) rotate(-45deg);
+    }
+
+    /* Fadear ut mitten-linjen i hamburgermenyn genom klassen cross (JS) */
+    .cross #line2 {
+        opacity: 0;
+    }
+
+    /* Ändrar position och rotrar tredje linjen 45 grader genom klassen cross (JS) */
+    .cross #line3 {
+        transform: translate(0, -8px) rotate(45deg);
+    }
+
+    /* Tar bort margin */
+    #logout-btn {
+        margin-left: 0;
+    }
+
+    /* Centrerar innehåll och wrappar footer */
+    #footer-content {
+        margin: 0 5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Ändrar marginal för divs i footer */
+    #footer-content div {
+        margin: 2rem;
+    }
+
+    /* Ändrar padding för copyright */
+    #bottom-foot p {
+        padding: 0 0 1rem 0;
+    }
+
+    /* Tar bort marginal */
+    #contactform-footer {
+        margin: 0 !important;
+    }
+
+}
+
+/* -------------------------------- MINDRE SKÄRMAR 600PX -------------------------------- */
+
+/* Styling för skärmar mindre än 600px */
+@media screen and (max-width: 600px) {
+
+    /* Minskar text-storlek */
+    body {
+        font-size: 1.6rem;
+    }
+
+    /* Minskar margin-topp */
+    main {
+        margin: 50px auto 0;
+    }
+
+    /* Ändrar position */
+    #breadcrumbs {
+        top: 80px;
+    }
+
+    /* Ökar storlek på bredd av mobilmeny */
+    #mobilenav {
+        width: 100vw;
+        max-width: 100%;
+    }
+
+    .menubtn {
+        margin: 0 0 0 6rem;
+    }
+
+    /* Döljer dator-navigering och dator boknings-text i knapp på startsida */
+    #computernav,
+    #computerbooking {
+        display: none;
+    }
+
+    /* Minskar marginal till topp */
+    #grid {
+        margin-top: 50px;
+    }
+
+    /* Minskar storlek */
+    h1 {
+        font-size: 2.6rem;
+        line-height: 3.6rem;
+        letter-spacing: 0;
+        margin: 12rem 0 0 0;
+    }
+
+    /* Minskar storlek */
+    h2 {
+        font-size: 2.2rem;
+        letter-spacing: 0;
+        line-height: 3.2rem;
+        margin: 3rem 0 1rem 0;
+    }
+
+    /* Minskar storlek */
+    h3 {
+        font-size: 2rem;
+        letter-spacing: 0;
+        line-height: 3rem;
+    }
+
+    /* Minskar storlek */
+    h4 {
+        font-size: 1.8rem;
+        letter-spacing: 0;
+        line-height: 2.8rem;
+    }
+
+    /* Tar bort marginal för fieldset i boka resa formulär */
+    #booking fieldset {
+        margin-left: 0;
+    }
+
+    /* Ändrar margin och padding för grid-item */
+    #item1 {
+        margin: 6rem 0;
+        padding: 0 2rem 4rem 2rem;
+    }
+
+    /* Visar mobiltext i knapp på startsida */
+    #mobilebooking {
+        display: inline-block;
+    }
+
+    /* Ändrar margin och storlek på logga in-knapp */
+    #mobilelogin {
+        margin: 2rem auto 0 auto;
+        width: 80%;
+    }
+
+    /* Ändrar storlek på sökformulär i mobilmeny */
+    #mobilenav form {
+        width: 80%;
+    }
+
+    /* Ändrar padding för länkar i mobilmeny */
+    #mobilenav a {
+        padding: 1rem 25%;
+    }
+
+    /* Ändrar flex-direction till column för två-spalts rader i formulär */
+    .two-spalt {
+        flex-direction: column;
+    }
+
+    /* Ändrar storlek till 100 % på fält i formulär */
+    input,
+    select,
+    .one-spalt input,
+    #small-screen select {
+        width: 100% !important;
+    }
+
+    /* Speciell styling för input checkbox och radio */
+    input[type="checkbox"],
+    input[type="radio"] {
+        width: 2rem !important;
+        height: 2rem;
+    }
+
+    /* Ändrar margin för reset-knapp */
+    #reset {
+        margin: 8rem 0 0 0;
+    }
+
+    /* Ändrar margin för boka-knapp i formulär */
+    #booking #submit {
+        margin: 3rem 0 5rem 0;
+    }
+
+    /* Ändrar margin och storlek för knapp */
+    #submit {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    /* Ändrar margin och storlek för knapp */
+    #submit2 {
+        width: 100%;
+        margin: 8rem auto;
+    }
+
+    /* Minskar textstorlek, centrerar och ändrar padding */
+    .my-site-btn {
+        font-size: 1.8rem;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    /* Ändrar topp-marginal för första resan som visas */
+    .travel1 {
+        margin-top: 5rem;
+    }
+
+    /* Centrerar rubriker och tar bort marginaler */
+    .travelinfo h2,
+    .travelinfo h3,
+    .travelinfo h4 {
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Ändrar styling för h4 i reseinfo */
+    .travelinfo h4 {
+        padding-top: 3rem;
+        border-top: 1px solid #001F3F;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+    }
+
+    /* Döljer resedetaljer för datorläge */
+    .addressinfo,
+    .traveldetails {
+        display: none;
+    }
+
+    /* Visar reseinfo för mobilläge istället */
+    .mobiletravel {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Ändrar margin för avboka resa-knapp i reseinfo */
+    .travelinfo .delete {
+        margin: 6rem 0 0 0;
+    }
+
+    /* Ändrar margin för ändra resa-knapp i reseinfo */
+    .travelinfo .change {
+        margin: 2rem 0 2rem 0;
+    }
+
+    /* Tar bort border och padding för rubrik h4 i ändra resa */
+    .changetravel h4 {
+        padding-top: 0;
+        border-top: 0;
+    }
+
+    /* Ändrar marginal för bekräftelse */
+    #confirm-section {
+        margin: 6rem auto 10rem auto;
+    }
+
+    /* Centrerar huvudrubrik på logga in */
+    #login h1 {
+        text-align: center;
+    }
+
+    /* Sätter min-höjd för QnA knappar */
+    .accordion {
+        padding: 0.5rem 2rem;
+        font-size: 1.7rem;
+        letter-spacing: 0;
+        min-height: 6.2rem;
+    }
+
+    /* Ändrar margin för knappar i kontaktformulär */
+    .contact #submit,
+    .contact #reset {
+        margin: 2rem 0 0 0;
+    }
+
+    /* Centerar text och ökar marginal till topp */
+    footer {
+        text-align: center;
+        margin: 4rem 0;
+        padding: 0.2rem 2rem 4rem 2rem;
+    }
+
+    /* Minskar storlek på rubrik i footer */
+    footer h2 {
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+    }
+
+    /* Ändrar flex-direction och centrerar */
+    #footer-content,
+    #bottom-foot {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Ändrar marginaler för copyright i footer */
+    #bottom-foot {
+        margin: 2rem 0 0 0;
+    }
+
+    /* Ändrar marginaler för divs i footer */
+    footer div {
+        margin: 2rem 0;
+    }
+}

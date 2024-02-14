@@ -1,0 +1,166 @@
+<!DOCTYPE html> <!-- HTML dokument -->
+<html lang="sv">
+
+<!-- Sidans huvud med metainformation, beskrivning, CSS, JS, titel, Font Awesome ikoner, favicon -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Svanvikens färdtjänst. Boka färdtjänst online och administrera dina resor.">
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0517951e44.js" crossorigin="anonymous" defer></script>
+    <script src="javascript/main.js" defer></script>
+    <title>Avboka resa | Svanvikens färdtjänst</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<!-- Sidans kropp -->
+
+<body>
+    <div></div>
+
+    <!-- Header -->
+    <header id="computerhead" aria-label="header">
+        <!-- Logotyp med länk till startsida, lazyload -->
+        <a href="index.html">
+            <img id="logo" src="images/svanvikenlogo.svg" width="261" height="60" alt="Svanviken färdtjänst logotyp"
+                loading="lazy">
+        </a>
+
+        <!-- Navigering i header -->
+        <nav id="headnav">
+            <ul class="hear-lang">
+                <li><button><em class="fa-solid fa-ear-listen"></em> Uppläsning</button></li>
+                <li><button><em class="fa-solid fa-globe"></em> Byt språk <em
+                            class="fa-solid fa-angle-down"></em></button></li>
+            </ul>
+            <ul>
+                <!-- Länk till hjälp-sida -->
+                <li><a href="about.html">Hjälp <em class="fa-solid fa-question"></em></a></li>
+                <!-- Länk till sök-sida -->
+                <li><a href="search.html">Sök <em class="fa-solid fa-magnifying-glass"></em></a></li>
+                <!-- Länk till kontaktformulär -->
+                <li><a href="contact.html">Kontakt <em class="fa-regular fa-message"></em></a></li>
+                <!-- Länk till logga in/mina sidor -->
+                <li><a href="login.html">Mina resor <em class="fa-regular fa-user"></em></a></li>
+            </ul>
+        </nav>
+
+        <!-- Hamburgermeny för mobil med menytext -->
+        <button class="menubtn">
+            <span id="menutext">MENY</span>
+            <span class="menuicon">
+                <span id="line1"></span>
+                <span id="line2"></span>
+                <span id="line3"></span>
+            </span>
+        </button>
+
+    </header>
+
+    <!-- Meny med navigeringslänkar för datorläge -->
+    <nav id="computernav" aria-label="huvudmeny">
+        <ul id="navlinks">
+            <li><a href="index.html">HEM</a></li>
+            <li><a id="active" href="about.html">FÄRDTJÄNST</a></li>
+        </ul>
+
+        <!-- Navlänkar för surfplatta -->
+        <ul id="mobileheadnav">
+            <!-- Länk till hjälp-sida -->
+            <li><a href="about.html">Hjälp <em class="fa-solid fa-question"></em></a></li>
+            <!-- Länk till sök-sida -->
+            <li><a href="search.html">Sök <em class="fa-solid fa-magnifying-glass"></em></a></li>
+            <!-- Länk till kontaktformulär -->
+            <li><a href="contact.html">Kontakt <em class="fa-regular fa-message"></em></a></li>
+            <!-- Länk till logga in/mina sidor -->
+            <li><a id="active4" href="mysite.html">Mina resor <em class="fa-regular fa-user"></em></a></li>
+        </ul>
+
+        <!-- Underlänkar i navmeny -->
+        <ul id="navlinks2" aria-label="undermeny navigering">
+            <li><a href="about.html">Om färdtjänst</a></li>
+            <li><a href="booking.html">Boka färdtjänst</a></li>
+            <li><a id="active2" href="mysite.html">Mina resor</a></li>
+        </ul>
+    </nav>
+
+    <!-- Meny med navigeringslänkar för mobilen + logga in och sökfunktion -->
+    <nav id="mobilenav" aria-label="huvudmeny">
+        <div class="hear-lang">
+            <button><em class="fa-solid fa-ear-listen"></em> Uppläsning</button>
+            <button><em class="fa-solid fa-globe"></em> Byt språk <em class="fa-solid fa-angle-down"></em></button>
+        </div>
+        <button id="mobilelogin" onclick="goToLogIn()">Logga in <em class="fa-regular fa-user"></em></button>
+        <ul>
+            <li><a class="mobileactive" href="index.html">HEM <em class="fa-solid fa-house"></em></a></li>
+            <li><a class="mobileactive" href="about.html">FÄRDTJÄNST</a></li>
+        </ul>
+        <ul id="underlinks" aria-label="undermeny navigering">
+            <li><a href="about.html">Om färdtjänst</a></li>
+            <li><a href="booking.html">Boka färdtjänst</a></li>
+            <li><a id="active3" href="mysite.html">Mina resor</a></li>
+        </ul>
+        <!-- Formulär för sök-input med ikon -->
+        <form id="search-box">
+            <label for="search">Sök efter information</label>
+            <input type="text" id="search" placeholder="Skriv in ditt sökord...">
+            <button id="searchbtn" aria-label="Sök"><em class="fa-solid fa-magnifying-glass"></em></button>
+        </form>
+    </nav>
+
+    <!-- Huvudinnehåll -->
+    <main>
+        <!-- Brödsmulor med tillbakalänkar -->
+        <div id="breadcrumbs"><a href="about.html">Färdtjänst</a> / <a href="login.html">Logga in</a> / <a
+                href="mysite.html">Mina resor</a> / <a href="unbooktravels.html">Avboka resa</a> / Bokning XY38522</div>
+        <!-- Huvudrubrik -->
+        <h1>Bokning XY38522</h1>
+        <!-- Sektion med underrubrik och textparagraf, länk till ändra resa-sidan. -->
+        <section class="travelinfo changetravel" id="unbook-section">
+            <h2>Avbokning av befintlig resa</h2>
+            <p id="small-text">Om du vill göra ändringar i din resa, gå till <a href="changetravels.html">Ändra
+                    resa</a>.</p>
+            <!-- Viktig text för att dubbelkolla innan avbokning. Knapp fö att genomföra hela avbokningen. -->
+            <p id="confirm-delete"><strong>Är du säker på att du vill avboka hela din resa?</strong></p>
+            <button onclick="goToUnbookConfirm1()" class="delete">Avboka resa</button>
+        </section>
+
+    </main>
+
+    <!-- Footer med diverse länkar -->
+    <footer>
+        <div id="footer-content">
+            <div id="contact-info">
+                <h2>Kontakta oss</h2>
+                <!-- Aria-label för epost/tel för skärmläsaren -->
+                <div id="contactform-footer"><em class="fa-regular fa-message"></em><a
+                        href="contact.html">Kontaktformulär</a></div>
+                <p><em class="fa-solid fa-phone"></em>Telefon:<wbr> <a href="tel:010-123456"
+                        aria-label="Telefonnummer: 010-123456">010-123456</a></p>
+                <p><em class="fa-regular fa-envelope"></em>E-post: <a href="mailto:kundservice@svanviken.se"
+                        aria-label="E-postadress: kundservice@svanviken.se">kundservice@svanviken.se</a></p>
+            </div>
+            <div>
+                <h2>Om webbplatsen</h2>
+                <a href="accessibility.html">Tillgänglighetsredogörelse</a>
+                <a href="index.html">Om kakor (cookies)</a>
+                <a href="index.html">Behandling av personuppgifter</a>
+            </div>
+            <div>
+                <h2>Snabblänkar</h2>
+                <a href="about.html#QnA">Frågor och svar</a>
+                <a href="booking.html">Boka färdtjänst</a>
+                <a href="login.html">Ändra / avboka resa</a>
+            </div>
+        </div>
+        <div id="bottom-foot">
+            <p>&copy; 2023 Isa Westling</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

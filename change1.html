@@ -1,0 +1,426 @@
+<!DOCTYPE html> <!-- HTML dokument -->
+<html lang="sv">
+
+<!-- Sidans huvud med metainformation, beskrivning, CSS, JS, titel, Font Awesome ikoner, favicon -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Svanvikens färdtjänst. Boka färdtjänst online och administrera dina resor.">
+    <!-- Inkluderar jQuery och jQuery UI för kalender + CSS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" defer></script>
+    <!-- Svenska versionen -->
+    <script src="javascript/datepicker-sv.js" defer></script>
+    <!-- Inkluderar jQuery UI timepicker CSS + JS + sve-version -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"
+        defer></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/i18n/jquery-ui-timepicker-addon-i18n.min.js"
+        defer></script>
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0517951e44.js" crossorigin="anonymous" defer></script>
+    <script src="javascript/main.js" defer></script>
+    <title>Ändra resa | Svanvikens färdtjänst</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<!-- Sidans kropp -->
+
+<body>
+    <!-- Opacity för JS-meny -->
+    <div></div>
+
+    <!-- Header -->
+    <header id="computerhead" aria-label="header">
+        <!-- Logotyp med länk till startsida, lazyload -->
+        <a href="index.html">
+            <img id="logo" src="images/svanvikenlogo.svg" width="261" height="60" alt="Svanviken färdtjänst logotyp"
+                loading="lazy">
+        </a>
+
+        <!-- Navigering i header -->
+        <nav id="headnav">
+            <ul class="hear-lang">
+                <li><button><em class="fa-solid fa-ear-listen"></em> Uppläsning</button></li>
+                <li><button><em class="fa-solid fa-globe"></em> Byt språk <em
+                            class="fa-solid fa-angle-down"></em></button></li>
+            </ul>
+            <ul>
+                <!-- Länk till hjälp-sida -->
+                <li><a href="about.html">Hjälp <em class="fa-solid fa-question"></em></a></li>
+                <!-- Länk till sök-sida -->
+                <li><a href="search.html">Sök <em class="fa-solid fa-magnifying-glass"></em></a></li>
+                <!-- Länk till kontaktformulär -->
+                <li><a href="contact.html">Kontakt <em class="fa-regular fa-message"></em></a></li>
+                <!-- Länk till logga in/mina sidor -->
+                <li><a href="login.html">Mina resor <em class="fa-regular fa-user"></em></a></li>
+            </ul>
+        </nav>
+
+        <!-- Hamburgermeny för mobil med menytext -->
+        <button class="menubtn">
+            <span id="menutext">MENY</span>
+            <span class="menuicon">
+                <span id="line1"></span>
+                <span id="line2"></span>
+                <span id="line3"></span>
+            </span>
+        </button>
+
+    </header>
+
+    <!-- Meny med navigeringslänkar för datorläge -->
+    <nav id="computernav" aria-label="huvudmeny">
+        <ul id="navlinks">
+            <li><a href="index.html">HEM</a></li>
+            <li><a id="active" href="about.html">FÄRDTJÄNST</a></li>
+        </ul>
+
+        <!-- Navlänkar för surfplatta -->
+        <ul id="mobileheadnav">
+            <!-- Länk till hjälp-sida -->
+            <li><a href="about.html">Hjälp <em class="fa-solid fa-question"></em></a></li>
+            <!-- Länk till sök-sida -->
+            <li><a href="search.html">Sök <em class="fa-solid fa-magnifying-glass"></em></a></li>
+            <!-- Länk till kontaktformulär -->
+            <li><a href="contact.html">Kontakt <em class="fa-regular fa-message"></em></a></li>
+            <!-- Länk till logga in/mina sidor -->
+            <li><a id="active4" href="mysite.html">Mina resor <em class="fa-regular fa-user"></em></a></li>
+        </ul>
+
+        <!-- Underlänkar i navmeny -->
+        <ul id="navlinks2" aria-label="undermeny navigering">
+            <li><a href="about.html">Om färdtjänst</a></li>
+            <li><a href="booking.html">Boka färdtjänst</a></li>
+            <li><a id="active2" href="mysite.html">Mina resor</a></li>
+        </ul>
+    </nav>
+
+    <!-- Meny med navigeringslänkar för mobilen + logga in och sökfunktion -->
+    <nav id="mobilenav" aria-label="huvudmeny">
+        <div class="hear-lang">
+            <button><em class="fa-solid fa-ear-listen"></em> Uppläsning</button>
+            <button><em class="fa-solid fa-globe"></em> Byt språk <em class="fa-solid fa-angle-down"></em></button>
+        </div>
+        <button id="mobilelogin" onclick="goToLogIn()">Logga in <em class="fa-regular fa-user"></em></button>
+        <ul>
+            <li><a class="mobileactive" href="index.html">HEM <em class="fa-solid fa-house"></em></a></li>
+            <li><a class="mobileactive" href="about.html">FÄRDTJÄNST</a></li>
+        </ul>
+        <ul id="underlinks" aria-label="undermeny navigering">
+            <li><a href="about.html">Om färdtjänst</a></li>
+            <li><a href="booking.html">Boka färdtjänst</a></li>
+            <li><a id="active3" href="mysite.html">Mina resor</a></li>
+        </ul>
+        <!-- Formulär för sök-input med ikon -->
+        <form id="search-box">
+            <label for="search">Sök efter information</label>
+            <input type="text" id="search" placeholder="Skriv in ditt sökord...">
+            <button id="searchbtn" aria-label="Sök"><em class="fa-solid fa-magnifying-glass"></em></button>
+        </form>
+    </nav>
+
+    <!-- Huvudinnehåll -->
+    <main>
+        <!-- Brödsmulor med tillbakalänkar -->
+        <div id="breadcrumbs"><a href="about.html">Färdtjänst</a> / <a href="login.html">Logga in</a> / <a
+                href="mysite.html">Mina resor</a> / <a href="changetravels.html">Ändra resa</a> / Bokning XY38522
+        </div>
+        <!-- Huvudrubrik, länk till avboka resa-->
+        <h1>Bokning XY38522</h1>
+        <div id="bookingnmbr">
+            <p><strong>Ändring av befintlig resa</strong></p>
+            <p id="small-text">Vill du avboka hela resan? Gå till <a href="unbooktravels.html">Avboka resa</a>.</p>
+        </div>
+
+        <!-- Formulär för att ändra bokad resa, autocomplete på -->
+        <form id="booking" autocomplete="on">
+            <fieldset>
+                <!-- Underrubriker -->
+                <h2>Bokningsdetaljer</h2>
+                <h3>Jag vill resa från...</h3>
+                <div class="one-spalt">
+                    <label for="adress1"><em class="fa-solid fa-location-dot"></em> Avreseadress <span
+                            style="color:#e30000">*</span></label>
+                    <input type="text" id="adress1" placeholder="Ange din avreseadress" required>
+                </div>
+                <div class="two-spalt">
+                    <div>
+                        <!-- Inputfält med typ för nummer -->
+                        <label for="postnmbr">Postnummer <span style="color:#e30000">*</span></label>
+                        <input type="number" id="postnmbr" placeholder="Ange ditt postnummer" required>
+                    </div>
+                    <div>
+                        <label for="city">Ort <span style="color:#e30000">*</span></label><br>
+                        <input type="text" id="city" placeholder="Ange din ort" required>
+                    </div>
+                </div>
+
+                <div class="two-spalt" id="small-screen">
+                    <div>
+                        <!-- Lista med 5 olika val, "välj antal" som standard "placeholder" -->
+                        <label for="persons"><em class="fa-solid fa-user-group"></em> Antal personer <span
+                                style="color:#e30000">*</span></label>
+                        <select id="persons" name="persons" required>
+                            <option value="">Välj antal</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 - 8</option>
+                        </select>
+                    </div>
+
+                    <!-- Valfria checkboxar med tooltips vid hover -->
+                    <div class="checkbox-alignment">
+                        <div class="checkbox-margin">
+                            <input type="checkbox" id="special-car">
+                            <label for="special-car" class="tooltip">Rullstolsanpassad färdtjänst <i
+                                    class="fa-solid fa-wheelchair"></i><em class="fa-solid fa-circle-info"></em><span
+                                    class="tooltiptext">Välj "Rullstolsanpassad
+                                    färdtjänst" om du behöver ett fordon med extra plats för din rullstol eller
+                                    rullator.</span></label>
+                        </div>
+                        <div class="checkbox-margin">
+                            <input type="checkbox" id="animals">
+                            <label for="animals" class="tooltip">Djur medföljer <em class="fa-solid fa-dog"></em><i
+                                    class="fa-solid fa-circle-info"></i><span class="tooltiptext">Välj "Djur medföljer"
+                                    om
+                                    du tar med dig sällskapsdjur på resan.</span></label>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Jag vill resa till...</h3>
+                <div class="one-spalt">
+                    <label for="adress2"><em class="fa-solid fa-location-dot"></em> Destionationsadress <span
+                            style="color:#e30000">*</span></label>
+                    <input type="text" id="adress2" placeholder="Ange din destinationsadress" required>
+                </div>
+                <div class="two-spalt">
+                    <div>
+                        <label for="postnmbr2">Postnummer <span style="color:#e30000">*</span></label>
+                        <input type="number" id="postnmbr2" placeholder="Ange postnummer" required>
+                    </div>
+                    <div>
+                        <label for="city2">Ort <span style="color:#e30000">*</span></label><br>
+                        <input type="text" id="city2" placeholder="Ange ort" required>
+                    </div>
+                </div>
+
+                <h3>När vill du åka?</h3>
+                <p>Observera att bokning måste genomföras <strong>minst 2 timmar</strong> innan önskad avresa
+                    för att vi
+                    ska kunna
+                    garantera din bokning.</p>
+                <div class="two-spalt">
+                    <div>
+                        <!-- Input type för datum, kalender -->
+                        <label for="date"><em class="fa-solid fa-calendar-days"></em> Datum <span
+                                style="color:#e30000">*</span></label>
+                        <input type="text" id="date" placeholder="Ange datum" required>
+                    </div>
+                    <div>
+                        <!-- Input type för tid, klocka -->
+                        <label for="time"><em class="fa-regular fa-clock"></em> Klockan <span
+                                style="color:#e30000">*</span></label>
+                        <input type="text" id="time" placeholder="Ange avresetid" required>
+                    </div>
+                </div>
+
+                <!-- Valfri checkbox med tooltip som visar mer info vid klick (JS) -->
+                <div class="one-spalt">
+                    <div class="checkbox-alignment">
+                        <div class="checkbox-margin">
+                            <input type="checkbox" id="return">
+                            <label for="return" class="tooltip">Returresa <i class="fa-solid fa-rotate-left"></i><em
+                                    class="fa-solid fa-circle-info"></em><span class="tooltiptext">
+                                    Välj "Returresa" om du vill boka en återresa till din ursprungliga
+                                    avreseplats.</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div id="return-box">
+                    <h3>Returresa</h3>
+                    <h4>När vill du bli hämtad?</h4>
+                    <p><strong>Observera</strong> att vi hämtar dig på din destinationsadress. Returresan går
+                        tillbaka till din
+                        ursprungliga avreseadress.</p>
+                    <div class="two-spalt">
+                        <div>
+                            <label for="date2"><em class="fa-solid fa-calendar-days"></em> Datum <span
+                                    style="color:#e30000">*</span></label>
+                            <input type="text" id="date2" placeholder="Ange datum">
+                        </div>
+                        <div>
+                            <label for="time2"><em class="fa-regular fa-clock"></em> Klockan <span
+                                    style="color:#e30000">*</span></label>
+                            <input type="text" id="time2" placeholder="Ange upphämtningstid">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Valfri checkbox med tooltip som visar mer info vid klick (JS) -->
+                <div class="one-spalt">
+                    <div class="checkbox-alignment">
+                        <div class="checkbox-margin">
+                            <input type="checkbox" id="freq">
+                            <label for="freq" class="tooltip">Återkommande resa <i class="fa-solid fa-rotate"></i><em
+                                    class="fa-solid fa-circle-info"></em><span class="tooltiptext">
+                                    Välj "Återkommande resa" om denna resa kommer att ske regelbundet.</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div id="freq-box">
+                    <h3>Återkommande resa</h3>
+                    <h4>Hur ofta ska resan upprepas? <span style="color:#e30000">*</span></h4>
+                    <div class="two-spalt">
+                        <!-- Radioknapp som visar mer info/val vid klick (JS) -->
+                        <div>
+                            <input type="radio" id="weekly" name="freq">
+                            <label for="weekly">Veckovis</label>
+                            <!-- Checkboxar vid valet veckovis -->
+                            <div id="weekly-freq">
+                                <input type="checkbox" id="everyday">
+                                <label for="everyday">Varje dag</label><br>
+                                <input type="checkbox" id="monday">
+                                <label for="monday">Måndag</label><br>
+                                <input type="checkbox" id="tuesday">
+                                <label for="tuesday">Tisdag</label><br>
+                                <input type="checkbox" id="wednesday">
+                                <label for="wednesday">Onsdag</label><br>
+                                <input type="checkbox" id="thursday">
+                                <label for="thursday">Torsdag</label><br>
+                                <input type="checkbox" id="friday">
+                                <label for="friday">Fredag</label><br>
+                                <input type="checkbox" id="saturday">
+                                <label for="saturday">Lördag</label><br>
+                                <input type="checkbox" id="sunday">
+                                <label for="sunday">Söndag</label><br>
+                            </div>
+                        </div>
+
+                        <!-- Radioknapp som visar mer info/val vid klick (JS) -->
+                        <div>
+                            <input type="radio" id="monthly" name="freq">
+                            <label for="monthly">Månadsvis</label>
+                            <!-- Lista med olika månadsdatum att välja mellan vid valet månadsvis -->
+                            <div id="monthly-freq">
+                                <label for="monthday">Datum i månaden <span style="color:#e30000">*</span></label>
+                                <select id="monthday" name="monthday">
+                                    <option value="">Välj datum i månaden</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prisuppgifter som visas först när alla obligatoriska fält är ifyllda (JS) -->
+                <div id="price">
+                    <h3>Prisuppgifter</h3>
+                    <p><strong>Resans kostnad: 56 SEK (4 zoner)</strong></p>
+                    <p>Betalning sker direkt till chauffören i samband med resans avgång. Du kan betala
+                        med kort, kontanter och Swish.</p>
+                </div>
+
+                <!-- Textarea för övrig input -->
+                <h3 id="extra-margin">Övriga önskemål</h3>
+                <div class="one-spalt">
+                    <label for="message">Har du några övriga önskemål/kommentarer?</label>
+                    <textarea name="message" id="message" placeholder="Skriv dina övriga önskemål här..."></textarea>
+
+                    <!-- Valfria checkboxar för bekräftelse och påminnelse -->
+                    <div class="checkbox-alignment">
+                        <div class="checkbox-margin">
+                            <input type="checkbox" id="confirm">
+                            <label for="confirm">Jag önskar bekräftelse via sms/e-post.</label>
+                        </div>
+                    </div>
+                    <div class="checkbox-alignment">
+                        <div class="checkbox-margin">
+                            <input type="checkbox" id="remind">
+                            <label for="remind">Jag önskar påminnelse via sms/e-post.</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Knappar för att genomföra ändringar (JS)-->
+                <div class="two-spalt">
+                    <label for="submit2"></label>
+                    <button onclick="changeBooking1()" type="button" id="submit2">Genomför ändring</button>
+                </div>
+            </fieldset>
+        </form>
+    </main>
+
+    <!-- Footer med diverse länkar -->
+    <footer>
+        <div id="footer-content">
+            <div id="contact-info">
+                <h2>Kontakta oss</h2>
+                <!-- Aria-label för epost/tel för skärmläsaren -->
+                <div id="contactform-footer"><em class="fa-regular fa-message"></em><a
+                        href="contact.html">Kontaktformulär</a></div>
+                <p><em class="fa-solid fa-phone"></em>Telefon:<wbr> <a href="tel:010-123456"
+                        aria-label="Telefonnummer: 010-123456">010-123456</a></p>
+                <p><em class="fa-regular fa-envelope"></em>E-post: <a href="mailto:kundservice@svanviken.se"
+                        aria-label="E-postadress: kundservice@svanviken.se">kundservice@svanviken.se</a></p>
+            </div>
+            <div>
+                <h2>Om webbplatsen</h2>
+                <a href="accessibility.html">Tillgänglighetsredogörelse</a>
+                <a href="index.html">Om kakor (cookies)</a>
+                <a href="index.html">Behandling av personuppgifter</a>
+            </div>
+            <div>
+                <h2>Snabblänkar</h2>
+                <a href="about.html#QnA">Frågor och svar</a>
+                <a href="booking.html">Boka färdtjänst</a>
+                <a href="login.html">Ändra / avboka resa</a>
+            </div>
+        </div>
+        <div id="bottom-foot">
+            <p>&copy; 2023 Isa Westling</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

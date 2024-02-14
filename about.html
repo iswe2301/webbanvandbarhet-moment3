@@ -1,0 +1,335 @@
+<!DOCTYPE html> <!-- HTML dokument -->
+<html lang="sv">
+
+<!-- Sidans huvud med metainformation, beskrivning, CSS, JS, titel, Font Awesome ikoner, favicon -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Svanvikens färdtjänst. Boka färdtjänst online och administrera dina resor.">
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0517951e44.js" crossorigin="anonymous" defer></script>
+    <script src="javascript/main.js" defer></script>
+    <title>Om färdtjänst | Svanvikens färdtjänst</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<!-- Sidans kropp -->
+
+<body>
+    <!-- Opacity för JS-meny -->
+    <div></div>
+
+    <!-- Header -->
+    <header id="computerhead" aria-label="header">
+        <!-- Logotyp med länk till startsida, lazyload -->
+        <a href="index.html">
+            <img id="logo" src="images/svanvikenlogo.svg" width="261" height="60" alt="Svanviken färdtjänst logotyp"
+                loading="lazy">
+        </a>
+
+        <!-- Navigering i header -->
+        <nav id="headnav">
+            <ul class="hear-lang">
+                <li><button><em class="fa-solid fa-ear-listen"></em> Uppläsning</button></li>
+                <li><button><em class="fa-solid fa-globe"></em> Byt språk <em
+                            class="fa-solid fa-angle-down"></em></button></li>
+            </ul>
+            <ul>
+                <!-- Länk till hjälp-sida -->
+                <li><a href="about.html">Hjälp <em class="fa-solid fa-question"></em></a></li>
+                <!-- Länk till sök-sida -->
+                <li><a href="search.html">Sök <em class="fa-solid fa-magnifying-glass"></em></a></li>
+                <!-- Länk till kontaktformulär -->
+                <li><a href="contact.html">Kontakt <em class="fa-regular fa-message"></em></a></li>
+                <!-- Länk till logga in/mina sidor -->
+                <li><a href="login.html">Mina resor <em class="fa-regular fa-user"></em></a></li>
+            </ul>
+        </nav>
+
+
+        <!-- Hamburgermeny för mobil med menytext -->
+            <button class="menubtn">
+                <span id="menutext">MENY</span>
+                <span class="menuicon">
+                    <span id="line1"></span>
+                    <span id="line2"></span>
+                    <span id="line3"></span>
+                </span>
+            </button>
+
+    </header>
+
+    <!-- Meny med navigeringslänkar för datorläge -->
+    <nav id="computernav" aria-label="huvudmeny">
+        <ul id="navlinks">
+            <li><a href="index.html">HEM</a></li>
+            <li><a id="active" href="about.html">FÄRDTJÄNST</a></li>
+        </ul>
+
+        <!-- Navlänkar för surfplatta -->
+        <ul id="mobileheadnav">
+            <!-- Länk till hjälp-sida -->
+            <li><a href="about.html">Hjälp <em class="fa-solid fa-question"></em></a></li>
+            <!-- Länk till sök-sida -->
+            <li><a href="search.html">Sök <em class="fa-solid fa-magnifying-glass"></em></a></li>
+            <!-- Länk till kontaktformulär -->
+            <li><a href="contact.html">Kontakt <em class="fa-regular fa-message"></em></a></li>
+            <!-- Länk till logga in/mina sidor -->
+            <li><a href="login.html">Mina resor <em class="fa-regular fa-user"></em></a></li>
+        </ul>
+
+        <!-- Underlänkar i navmeny -->
+        <ul id="navlinks2" aria-label="undermeny navigering">
+            <li><a id="active2" href="about.html">Om färdtjänst</a></li>
+            <li><a href="booking.html">Boka färdtjänst</a></li>
+            <li><a href="mysite.html">Mina resor</a></li>
+        </ul>
+    </nav>
+
+    <!-- Meny med navigeringslänkar för mobilen + logga in och sökfunktion -->
+    <nav id="mobilenav" aria-label="huvudmeny">
+        <div class="hear-lang">
+            <button><em class="fa-solid fa-ear-listen"></em> Uppläsning</button>
+            <button><em class="fa-solid fa-globe"></em> Byt språk <em class="fa-solid fa-angle-down"></em></button>
+        </div>
+        <button id="mobilelogin" onclick="goToLogIn()">Logga in <em class="fa-regular fa-user"></em></button>
+        <ul>
+            <li><a class="mobileactive" href="index.html">HEM <em class="fa-solid fa-house"></em></a></li>
+            <li><a class="mobileactive" href="about.html">FÄRDTJÄNST</a></li>
+        </ul>
+        <ul id="underlinks" aria-label="undermeny navigering">
+            <li><a id="active3" href="about.html">Om färdtjänst</a></li>
+            <li><a href="booking.html">Boka färdtjänst</a></li>
+            <li><a href="mysite.html">Mina resor</a></li>
+        </ul>
+        <!-- Formulär för sök-input med ikon -->
+        <form id="search-box">
+            <label for="search">Sök efter information</label>
+            <input type="text" id="search" placeholder="Skriv in ditt sökord...">
+            <button id="searchbtn" aria-label="Sök"><em class="fa-solid fa-magnifying-glass"></em></button>
+        </form>
+    </nav>
+
+    <!-- Huvudinnehåll -->
+    <main>
+        <!-- Brödsmulor med tillbakalänkar -->
+        <div id="breadcrumbs"><a href="about.html">Färdtjänst</a> / Om färdtjänst</div>
+        <!-- Huvudrubrik för sida -->
+        <h1>Om färdtjänst</h1>
+        <!-- Sektion med underrubrik, text och knappar som kan fällas ut (JS) för frågor och svar -->
+        <section>
+            <h2>Svanviken - Din färdtjänst</h2>
+            <p>Färdtjänst är en transporttjänst för personer med funktionsnedsättningar som inte kan använda
+                allmänna kommunikationsmedel som buss eller tåg. Det är en service som erbjuds för att underlätta
+                för personer med begränsad rörlighet. Färdtjänsten finns för att du ska kunna ta dig till olika
+                platser även om du inte kan använda den vanliga kollektivtrafiken.</p>
+            <h3 id="QnA">Vanliga frågor och svar</h3>
+            <!-- ARIA används -->
+            <ul id="questions" aria-label="Vanliga frågor och svar">
+                <li><button class="accordion" aria-expanded="false" aria-controls="art1">Vad är färdtjänst? <em
+                            class="fa-solid fa-angle-down"></em></button>
+                    <!-- Svar som visas när knapp klickas, ikon ändras -->
+                    <div class="answer" id="art1" role="region" aria-live="polite">
+                        <p>Färdtjänst är en transporttjänst för personer med funktionsnedsättningar som inte kan använda
+                            allmänna kommunikationsmedel som buss eller tåg. Det är en service som erbjuds för att
+                            underlätta
+                            för personer med begränsad rörlighet. Färdtjänsten finns för att du ska kunna ta dig till
+                            olika
+                            platser även om du inte kan använda den vanliga kollektivtrafiken.</p>
+                    </div>
+                </li>
+                <li><button class="accordion" aria-expanded="false" aria-controls="art2">Hur fungerar färdtjänst? <em
+                            class="fa-solid fa-angle-down"></em></button>
+                    <div class="answer" id="art2" role="region" aria-live="polite">
+                        <p>Om du är i behov av färdtjänst ansöker du om färdtjänst och blir godkänd baserat på dina
+                            behov
+                            och
+                            funktionsnedsättningar.</p>
+                        <p>När du har blivit godkänd kan du boka din resa här hos oss på Svanviken. Gå in under <a
+                                href="booking.html">Boka färdtjänst</a>. Du
+                            bokar resan i förväg och uppger önskad start- och destinationsadress. Du bör vara redo vid
+                            den
+                            angivna upphämtningstiden.</p>
+                        <p>Färdtjänsten erbjuds med anpassade fordon och kan inkludera hjälp med på- och avstigning.</p>
+                    </div>
+                </li>
+                <li><button class="accordion" aria-expanded="false" aria-controls="art3">Vem kan få färdtjänst? <em
+                            class="fa-solid fa-angle-down"></em></button>
+                    <div class="answer" id="art3" role="region" aria-live="polite">
+                        <p>Det finns krav som man måste uppfylla för att bli beviljad
+                            färdtjänst.<br><br><strong>Grundkraven
+                                för
+                                att du
+                                ska kunna få färdtjänst är:</strong></p>
+                        <!-- O-ordnad lista -->
+                        <ul>
+                            <li>Du ska ha stora svårigheter att förflytta dig på egen hand
+                            <li>Du ska ha svårt att använda vanliga bussar och tåg i kollektivtrafik</li>
+                            <li>Du måste vara skriven som bosatt i den kommun där du ansöker om färdtjänst</li>
+                            <li>Funktionsnedsättningen ska ha funnits ett längre tag, minst 6 månader och det ska
+                                förväntas
+                                fortsätta.</li>
+                        </ul>
+                        <p>Även om du håller på med rehabilitering så har du rätt att använda färdtjänst. Tanken är att
+                            färdtjänst ska vara en ersättning för den som inte kan resa med kollektivtrafiken.</p>
+                    </div>
+                </li>
+                <li><button class="accordion" aria-expanded="false" aria-controls="art4">Hur ansöker jag om färdtjänst?
+                        <em class="fa-solid fa-angle-down"></em></button>
+                    <div class="answer" id="art4" role="region" aria-live="polite">
+                        <p>För att ansöka om färdtjänst i Svanvikens kommun kan du göra det via:
+                            <a href="about.html" target="_blank">www.svanvikenskommun.se/ansok-om-fardtjanst <em
+                                    class="fa-solid fa-arrow-up-right-from-square"></em></a> (öppnas i ny flik)
+                        </p>
+                        <p>Oftast måste du skicka med ett läkarintyg som visar att du har svårigheter att förflytta dig
+                            med
+                            den
+                            vanliga kollektivtrafiken. Din läkare behöver då beskriva ditt färdtjänstbehov. Kontakta din
+                            läkare
+                            och
+                            säg att du behöver ett läkarintyg som visar att du bär i behov av färdtjänst.
+                        </p>
+                        <p>När du skickat in din ansökan tar en handläggare i din kommun hand om ansökan. Handläggaren
+                            gör
+                            en
+                            bedömning av ditt färdtjänstbehov innan ett beslut fattas. Beslutet skickas sedan till dig.
+                        </p>
+                    </div>
+                </li>
+                <li><button class="accordion" aria-expanded="false" aria-controls="art5">När kan jag använda färdtjänst?
+                        <em class="fa-solid fa-angle-down"></em></button>
+                    <div class="answer" id="art5" role="region" aria-live="polite">
+                        <p>Färdtjänsten kan du använda när du ska handla, gå på posten, hälsa på släkt, åka till
+                            högskola
+                            eller
+                            universitet för studier, delta i föreningsarbete, hämta och lämna barn, besöka vänner och så
+                            vidare.
+                            Du blir helt enkelt hämtad på ett ställe och avlämnad dit du ska.
+                        </p>
+                    </div>
+                </li>
+                <li><button class="accordion" aria-expanded="false" aria-controls="art6">Vem får följa med på resan? <em
+                            class="fa-solid fa-angle-down"></em></button>
+                    <div class="answer" id="art6" role="region" aria-live="polite">
+                        <h4>Medresenär</h4>
+                        <p>Du som har färdtjänst har möjlighet att ta med dig en (1) medresenär på dina färdtjänstresor.
+                            Medresenären betalar samma avgift för sin resa som du betalar för din färtjänstresa
+                        </p>
+                        <h4>Ledsagare</h4>
+                        <p>Om du har behov av hjälp i färdtjänstfordonet under resans gång kan du ansöka om att
+                            avgiftsfritt
+                            få
+                            ta med dig ledsagare. Kommunens färdtjänstutredare beslutar om du har rätt att ta med en
+                            ledsagare.
+                            Du behöver ordna med egen ledsagare, färdtjänstutredaren beslutar endast om du har rätt till
+                            att
+                            få
+                            ta med ledsagare på dina resor.</p>
+                        <h4>Sällskapsdjur</h4>
+                        <p>Du kan ansöka om att få ta med dig sällskapsdjur på dina färdtjänstresor. Mindre
+                            sällskapsdjur
+                            ska
+                            under resan förvaras i bur eller ha godkänd sele och placeras på anvisad plats i fordonet.
+                            Ansökan
+                            gör du skriftligt i din färdtjänstansökan.</p>
+                        <h4>Barn</h4>
+                        <p>Du får ta med dig två (2) barn under 7 år kostnadsfritt på dina färdtjänstresor. Hjälpmedel
+                            såsom
+                            babyskydd, bilbarnstol, bältesstol behöver du som
+                            resenär själv ta med. Barn som är 7-19 år räknas som medresenärer och får betala samma pris
+                            som
+                            dig
+                            som färdtjänstberättigad.</p>
+                    </div>
+                </li>
+                <li><button class="accordion" aria-expanded="false" aria-controls="art7">Vad kostar färdtjänst? <em
+                            class="fa-solid fa-angle-down"></em></button>
+                    <div class="answer" id="art7" role="region" aria-live="polite">
+                        <p>Kostnaden för din resa varierar beroende på hur långt du åker. Svanvikens kommun är indelad i
+                            fem
+                            (5)
+                            stycken olika
+                            zoner och priset baseras på hur många zoner du åker genom.
+                        </p>
+                        <p>Du betalar din resa till chauffören i samband med att din resa ska avgå. Det går bra att
+                            betala
+                            både
+                            med kort, kontanter och Swish.</p>
+                        <p><strong>Svanvikens zoner:</strong></p>
+                        <ul>
+                            <li>1 zon - 32 kronor</li>
+                            <li>2 zoner - 43 kronor</li>
+                            <li>3 zoner - 56 kronor</li>
+                            <li>4 zoner - 70 kronor</li>
+                            <li>5 zoner - 85 kronor</li>
+                        </ul>
+                    </div>
+                </li>
+                <li><button class="accordion" aria-expanded="false" aria-controls="art8">Hur bokar jag färdtjänst? <em
+                            class="fa-solid fa-angle-down"></em></button>
+                    <div class="answer" id="art8" role="region" aria-live="polite">
+                        <p>Du bokar din färdtjänstresa genom att gå in under <a href="booking.html">Boka färdtjänst</a>.
+                            Fyll i
+                            informationen i bokningsformuläret och klicka på boka resa. Vid genomförd bokning får du en
+                            bokningsbekräftelse direkt.
+                        </p>
+                    </div>
+                </li>
+                <li><button class="accordion" aria-expanded="false" aria-controls="art9">Kan jag ändra/avboka min resa?
+                        <em class="fa-solid fa-angle-down"></em></button>
+                    <div class="answer" id="art9" role="region" aria-live="polite">
+                        <p>Ja, du kan både ändra och avboka din resa genom att logga in på <a href="login.html">Mina
+                                resor</a>.
+                            Logga in med BankID eller e-postadress och lösenord. Här kan du se dina befintliga resor,
+                            ändra
+                            resor samt avboka resor.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <!-- Länk till sök och kontaktsida -->
+            <div id="search-paragraph">
+                <p>Hittar du inte informationen som du letar efter?</p>
+                <p>Använd vår <strong><a href="search.html">sökfunktion</a></strong> eller <strong><a
+                            href="contact.html">kontakta
+                            oss</a></strong>.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer med diverse länkar -->
+    <footer>
+        <div id="footer-content">
+            <div id="contact-info">
+                <h2>Kontakta oss</h2>
+                <!-- Aria-label för epost/tel för skärmläsaren -->
+                <div id="contactform-footer"><em class="fa-regular fa-message"></em><a
+                        href="contact.html">Kontaktformulär</a></div>
+                <p><em class="fa-solid fa-phone"></em>Telefon:<wbr> <a href="tel:010-123456"
+                        aria-label="Telefonnummer: 010-123456">010-123456</a></p>
+                <p><em class="fa-regular fa-envelope"></em>E-post: <a href="mailto:kundservice@svanviken.se"
+                        aria-label="E-postadress: kundservice@svanviken.se">kundservice@svanviken.se</a></p>
+            </div>
+            <div>
+                <h2>Om webbplatsen</h2>
+                <a href="accessibility.html">Tillgänglighetsredogörelse</a>
+                <a href="index.html">Om kakor (cookies)</a>
+                <a href="index.html">Behandling av personuppgifter</a>
+            </div>
+            <div>
+                <h2>Snabblänkar</h2>
+                <a href="about.html#QnA">Frågor och svar</a>
+                <a href="booking.html">Boka färdtjänst</a>
+                <a href="login.html">Ändra / avboka resa</a>
+            </div>
+        </div>
+        <div id="bottom-foot">
+            <p>&copy; 2023 Isa Westling</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

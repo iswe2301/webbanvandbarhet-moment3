@@ -1,0 +1,192 @@
+<!DOCTYPE html> <!-- HTML dokument -->
+<html lang="sv">
+
+<!-- Sidans huvud med metainformation, beskrivning, CSS, JS, titel, Font Awesome ikoner, favicon -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Svanvikens färdtjänst. Boka färdtjänst online och administrera dina resor.">
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0517951e44.js" crossorigin="anonymous" defer></script>
+    <script src="javascript/main.js" defer></script>
+    <title>Tillgänglighet | Svanvikens färdtjänst</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<!-- Sidans kropp -->
+
+<body>
+    <!-- Opacity för JS-meny -->
+    <div></div>
+
+    <!-- Header -->
+    <header id="computerhead" aria-label="header">
+        <!-- Logotyp med länk till startsida, lazyload -->
+        <a href="index.html">
+            <img id="logo" src="images/svanvikenlogo.svg" width="261" height="60" alt="Svanviken färdtjänst logotyp"
+                loading="lazy">
+        </a>
+
+        <!-- Navigering i header -->
+        <nav id="headnav">
+            <ul class="hear-lang">
+                <li><button><em class="fa-solid fa-ear-listen"></em> Uppläsning</button></li>
+                <li><button><em class="fa-solid fa-globe"></em> Byt språk <em
+                            class="fa-solid fa-angle-down"></em></button></li>
+            </ul>
+            <ul>
+                <!-- Länk till hjälp-sida -->
+                <li><a href="about.html">Hjälp <em class="fa-solid fa-question"></em></a></li>
+                <!-- Länk till sök-sida -->
+                <li><a href="search.html">Sök <em class="fa-solid fa-magnifying-glass"></em></a></li>
+                <!-- Länk till kontaktformulär -->
+                <li><a href="contact.html">Kontakt <em class="fa-regular fa-message"></em></a></li>
+                <!-- Länk till logga in/mina sidor -->
+                <li><a href="login.html">Mina resor <em class="fa-regular fa-user"></em></a></li>
+            </ul>
+        </nav>
+
+        <!-- Hamburgermeny för mobil med menytext -->
+        <button class="menubtn">
+            <span id="menutext">MENY</span>
+            <span class="menuicon">
+                <span id="line1"></span>
+                <span id="line2"></span>
+                <span id="line3"></span>
+            </span>
+        </button>
+
+    </header>
+
+    <!-- Meny med navigeringslänkar för datorläge -->
+    <nav id="computernav" aria-label="huvudmeny">
+        <ul id="navlinks">
+            <li><a href="index.html">HEM</a></li>
+            <li><a href="about.html">FÄRDTJÄNST</a></li>
+        </ul>
+
+        <!-- Navlänkar för surfplatta -->
+        <ul id="mobileheadnav">
+            <!-- Länk till hjälp-sida -->
+            <li><a href="about.html">Hjälp <em class="fa-solid fa-question"></em></a></li>
+            <!-- Länk till sök-sida -->
+            <li><a href="search.html">Sök <em class="fa-solid fa-magnifying-glass"></em></a></li>
+            <!-- Länk till kontaktformulär -->
+            <li><a href="contact.html">Kontakt <em class="fa-regular fa-message"></em></a></li>
+            <!-- Länk till logga in/mina sidor -->
+            <li><a href="login.html">Mina resor <em class="fa-regular fa-user"></em></a></li>
+        </ul>
+    </nav>
+
+    <!-- Meny med navigeringslänkar för mobilen + logga in och sökfunktion -->
+    <nav id="mobilenav" aria-label="huvudmeny">
+        <div class="hear-lang">
+            <button><em class="fa-solid fa-ear-listen"></em> Uppläsning</button>
+            <button><em class="fa-solid fa-globe"></em> Byt språk <em class="fa-solid fa-angle-down"></em></button>
+        </div>
+        <button id="mobilelogin" onclick="goToLogIn()">Logga in <em class="fa-regular fa-user"></em></button>
+        <ul>
+            <li><a class="mobileactive" href="index.html">HEM <em class="fa-solid fa-house"></em></a></li>
+            <li><a class="mobileactive" href="about.html">FÄRDTJÄNST</a></li>
+        </ul>
+        <!-- Formulär för sök-input med ikon -->
+        <form id="search-box">
+            <label for="search">Sök efter information</label>
+            <input type="text" id="search" placeholder="Skriv in ditt sökord...">
+            <button id="searchbtn" aria-label="Sök"><em class="fa-solid fa-magnifying-glass"></em></button>
+        </form>
+    </nav>
+
+    <!-- Huvudinnehåll -->
+    <main>
+        <!-- Brödsmulor med tillbakalänkar -->
+        <div id="breadcrumbs"><a href="index.html">Hem</a> / Tillgänglighetsredogörelse</div>
+        <!-- Sektion med huvudrubrik, underrubriker och paragrafer -->
+        <section id="accessibility">
+            <h1>Tillgänglighets&shy;redogörelse</h1>
+            <p><strong>Här hittar du tillgänglighetsredogörelsen för Svanvikens färdtjänst offentliga webbplats,
+                    svanvikensfardtjanst.se.</strong></p>
+            <h2>Tillgänglighet för svanvikensfardtjanst.se</h2>
+            <p>Svanvikens kommun står bakom den här webbplatsen. Vi vill att så många som möjligt ska kunna använda den.
+                Det här dokumentet beskriver hur svanvikensfardtjanst.se uppfyller lagen om tillgänglighet till
+                digital offentlig service, eventuella kända tillgänglighetsproblem och hur du kan rapportera brister
+                till oss så att vi kan åtgärda dem.</p>
+            <h2>Hur tillgänglig är webbplatsen?</h2>
+            <p>Vi har inga kända brister i tillgängligheten för den här webbplatsen.</p>
+            <h2>Teknisk information om webbplatsens tillgänglighet</h2>
+            <!-- Extern länk -->
+            <p>Den här webbplatsen är helt förenlig med lagen om tillgänglighet till digital offentlig service (nivå AA
+                i standarden <a href="https://www.w3.org/TR/WCAG21" target="_blank">Web Content Accessibility Guidelines
+                    version 2.1 <em class="fa-solid fa-arrow-up-right-from-square"></em></a> (öppnas i ny flik)).</p>
+            <h2>Vad kan du göra om du inte kan använda delar av webbplatsen?</h2>
+            <p>Om du behöver innehåll från svanvikensfardtjanst.se som inte är tillgängligt för dig, men som är
+                undantaget från lagens tillämpningsområde enligt beskrivning nedan, kan du <a
+                    href="contact.html">kontakta oss</a>.</p>
+            <p>Svarstiden är normalt 1-2 arbetsdagar.</p>
+            <p>Du kan också kontakta oss på följande sätt:</p>
+            <!-- O-ordnad lista med länkar -->
+            <ul>
+                <li>skicka e-post till <a href="mailto:kundservice@svanviken.se">kundservice@svanviken.se</a></li>
+                <li>ringa <a href="tel:+46101123456">010-123 456</a></li>
+            </ul>
+            <h2>Rapportera brister i webbplatsens tillgänglighet</h2>
+            <p>Vi strävar hela tiden efter att förbättra webbplatsens tillgänglighet. Om du upptäcker problem som inte
+                är beskrivna på den här sidan, eller om du anser att vi inte uppfyller lagens krav, <a
+                    href="contact.html">kontakta oss</a> så att
+                vi får veta att problemet finns.</p>
+            <h2>Tillsyn</h2>
+            <p>Myndigheten för digital förvaltning, Digg, har ansvaret för tillsyn över lagen om tillgänglighet till
+                digital offentlig service. Du kan <a href="https://www.digg.se/tdosanmalan" target="_blank">anmäla till
+                    Digg <em class="fa-solid fa-arrow-up-right-from-square"></em></a> (öppnas i ny flik) om du tycker
+                att vår digitala service har brister i
+                tillgänglighet.
+            </p>
+            <p>Du kan också <a href="https://www.digg.se/tdosanmalan" target="_blank">anmäla till Digg <em
+                        class="fa-solid fa-arrow-up-right-from-square"></em></a> (öppnas i ny flik) om du tycker att vår
+                bedömning av vad som är oskäligt betungande ska
+                granskas, om du tycker att vår tillgänglighetsredogörelse har brister eller om du tycker att vi inte har
+                hanterat din begäran om tillgängliggörande korrekt.</p>
+            <h2>Hur vi testat webbplatsen</h2>
+            <p>Vi har gjort en självskattning (intern testning) av svanvikensfardtjanst.se.</p>
+            <p>Senaste bedömningen gjordes den 5 januari 2024.</p>
+            <p>Webbplatsen publicerades den 5 januari 2024.</p>
+            <p>Redogörelsen uppdaterades senast den 5 januari 2024.</p>
+        </section>
+    </main>
+
+    <!-- Footer med diverse länkar -->
+    <footer>
+        <div id="footer-content">
+            <div id="contact-info">
+                <h2>Kontakta oss</h2>
+                <!-- Aria-label för epost/tel för skärmläsaren -->
+                <div id="contactform-footer"><em class="fa-regular fa-message"></em><a
+                        href="contact.html">Kontaktformulär</a></div>
+                <p><em class="fa-solid fa-phone"></em>Telefon:<wbr> <a href="tel:010-123456"
+                        aria-label="Telefonnummer: 010-123456">010-123456</a></p>
+                <p><em class="fa-regular fa-envelope"></em>E-post: <a href="mailto:kundservice@svanviken.se"
+                        aria-label="E-postadress: kundservice@svanviken.se">kundservice@svanviken.se</a></p>
+            </div>
+            <div>
+                <h2>Om webbplatsen</h2>
+                <a href="accessibility.html">Tillgänglighetsredogörelse</a>
+                <a href="index.html">Om kakor (cookies)</a>
+                <a href="index.html">Behandling av personuppgifter</a>
+            </div>
+            <div>
+                <h2>Snabblänkar</h2>
+                <a href="about.html#QnA">Frågor och svar</a>
+                <a href="booking.html">Boka färdtjänst</a>
+                <a href="login.html">Ändra / avboka resa</a>
+            </div>
+        </div>
+        <div id="bottom-foot">
+            <p>&copy; 2023 Isa Westling</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
